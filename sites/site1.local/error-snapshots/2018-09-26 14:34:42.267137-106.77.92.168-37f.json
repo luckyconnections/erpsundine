@@ -1,0 +1,300 @@
+{
+ "etype": "<type 'exceptions.AttributeError'>", 
+ "evalue": "AttributeError(\"'JournalEntryAccount' object has no attribute 'account'\",)", 
+ "exception": {
+  "args": "(\"'JournalEntryAccount' object has no attribute 'account'\",)", 
+  "message": "\"'JournalEntryAccount' object has no attribute 'account'\""
+ }, 
+ "frames": [
+  {
+   "call": "(request=<Request 'http://184.149.34.135/' [POST]>)", 
+   "dump": {
+    "frappe. handler": "<module 'frappe.handler' from '/home/vini/frappe-bench/apps/frappe/frappe/handler.pyc'>", 
+    "frappe.handler. handle": "<function handle>", 
+    "global frappe": "<module 'frappe' from '/home/vini/frappe-bench/apps/frappe/frappe/__init__.pyc'>", 
+    "response": "None"
+   }, 
+   "file": "/home/vini/frappe-bench/apps/frappe/frappe/app.py", 
+   "func": "application", 
+   "lines": {
+    "60": "", 
+    "61": "\t\tif frappe.local.form_dict.cmd:", 
+    "62": "\t\t\tresponse = frappe.handler.handle()", 
+    "63": "", 
+    "64": "\t\telif frappe.request.path.startswith(\"/api/\"):"
+   }, 
+   "lnum": 62
+  }, 
+  {
+   "call": "()", 
+   "dump": {
+    "cmd": "u'frappe.desk.form.save.savedocs'", 
+    "data": "None", 
+    "global execute_cmd": "<function execute_cmd>"
+   }, 
+   "file": "/home/vini/frappe-bench/apps/frappe/frappe/handler.py", 
+   "func": "handle", 
+   "lines": {
+    "20": "", 
+    "21": "\tif cmd!='login':", 
+    "22": "\t\tdata = execute_cmd(cmd)", 
+    "23": "", 
+    "24": "\tif data:"
+   }, 
+   "lnum": 22
+  }, 
+  {
+   "call": "(cmd=u'frappe.desk.form.save.savedocs', from_async=False)", 
+   "dump": {
+    "frappe. call": "<function call>", 
+    "frappe. form_dict": "{'action': u'Save', 'doc': u'{\"docstatus\":0,\"doc...e\":0}', 'cmd': u'frappe.desk.form.save.savedocs'}", 
+    "global frappe": "<module 'frappe' from '/home/vini/frappe-bench/apps/frappe/frappe/__init__.pyc'>", 
+    "method": "<function savedocs>"
+   }, 
+   "file": "/home/vini/frappe-bench/apps/frappe/frappe/handler.py", 
+   "func": "execute_cmd", 
+   "lines": {
+    "51": "\tis_whitelisted(method)", 
+    "52": "", 
+    "53": "\treturn frappe.call(method, **frappe.form_dict)", 
+    "54": "", 
+    "55": ""
+   }, 
+   "lnum": 53
+  }, 
+  {
+   "call": "(fn=<function savedocs>, *args=(), **kwargs={'action': u'Save', 'cmd': u'frappe.desk.form.save.savedocs', 'doc': u'{\"docstatus\":0,\"doctype\":\"Journal Entry\",\"name...al_debit\":100,\"total_credit\":100,\"difference\":0}'})", 
+   "dump": {
+    "args": "()", 
+    "fn": "<function savedocs>", 
+    "newargs": "{'action': u'Save', 'doc': u'{\"docstatus\":0,\"doctype\":\"Journal Entry\",\"name...al_debit\":100,\"total_credit\":100,\"difference\":0}'}"
+   }, 
+   "file": "/home/vini/frappe-bench/apps/frappe/frappe/__init__.py", 
+   "func": "call", 
+   "lines": {
+    "937": "\t\tdel newargs[\"flags\"]", 
+    "938": "", 
+    "939": "\treturn fn(*args, **newargs)", 
+    "940": "", 
+    "941": "def make_property_setter(args, ignore_validate=False, validate_fields_for_doctype=True):"
+   }, 
+   "lnum": 939
+  }, 
+  {
+   "call": "(doc=<erpnext.accounts.doctype.journal_entry.journal_entry.JournalEntry object>, action=u'Save')", 
+   "dump": {
+    "doc": "<erpnext.accounts.doctype.journal_entry.journal_entry.JournalEntry object>", 
+    "doc. save": "<bound method JournalEntry.save of <erpnext.acco...journal_entry.journal_entry.JournalEntry object>>"
+   }, 
+   "file": "/home/vini/frappe-bench/apps/frappe/frappe/desk/form/save.py", 
+   "func": "savedocs", 
+   "lines": {
+    "20": "\t\telse:", 
+    "21": "\t\t\ttry:", 
+    "22": "\t\t\t\tdoc.save()", 
+    "23": "\t\t\texcept frappe.NameError as e:", 
+    "24": "\t\t\t\tdoctype, name, original_exception = e if isinstance(e, tuple) else (doc.doctype or \"\", doc.name or \"\", None)"
+   }, 
+   "lnum": 22
+  }, 
+  {
+   "call": "(self=<erpnext.accounts.doctype.journal_entry.journal_entry.JournalEntry object>, *args=(), **kwargs={})", 
+   "dump": {
+    "args": "()", 
+    "kwargs": "{}", 
+    "self": "<erpnext.accounts.doctype.journal_entry.journal_entry.JournalEntry object>", 
+    "self. _save": "<bound method JournalEntry._save of <erpnext.acc...journal_entry.journal_entry.JournalEntry object>>"
+   }, 
+   "file": "/home/vini/frappe-bench/apps/frappe/frappe/model/document.py", 
+   "func": "save", 
+   "lines": {
+    "257": "\tdef save(self, *args, **kwargs):", 
+    "258": "\t\t\"\"\"Wrapper for _save\"\"\"", 
+    "259": "\t\treturn self._save(*args, **kwargs)", 
+    "260": "", 
+    "261": "\tdef _save(self, ignore_permissions=None, ignore_version=None):"
+   }, 
+   "lnum": 259
+  }, 
+  {
+   "call": "(self=<erpnext.accounts.doctype.journal_entry.journal_entry.JournalEntry object>, ignore_permissions=None, ignore_version=None)", 
+   "dump": {
+    "self": "<erpnext.accounts.doctype.journal_entry.journal_entry.JournalEntry object>", 
+    "self. insert": "<bound method JournalEntry.insert of <erpnext.ac...journal_entry.journal_entry.JournalEntry object>>"
+   }, 
+   "file": "/home/vini/frappe-bench/apps/frappe/frappe/model/document.py", 
+   "func": "_save", 
+   "lines": {
+    "280": "", 
+    "281": "\t\tif self.get(\"__islocal\") or not self.get(\"name\"):", 
+    "282": "\t\t\tself.insert()", 
+    "283": "\t\t\treturn", 
+    "284": ""
+   }, 
+   "lnum": 282
+  }, 
+  {
+   "call": "(self=<erpnext.accounts.doctype.journal_entry.journal_entry.JournalEntry object>, ignore_permissions=None, ignore_links=None, ignore_if_duplicate=False, ignore_mandatory=None)", 
+   "dump": {
+    "self": "<erpnext.accounts.doctype.journal_entry.journal_entry.JournalEntry object>", 
+    "self. run_before_save_methods": "<bound method JournalEntry.run_before_save_metho...journal_entry.journal_entry.JournalEntry object>>"
+   }, 
+   "file": "/home/vini/frappe-bench/apps/frappe/frappe/model/document.py", 
+   "func": "insert", 
+   "lines": {
+    "219": "\t\tself.flags.in_insert = True", 
+    "220": "\t\tself._validate_links()", 
+    "221": "\t\tself.run_before_save_methods()", 
+    "222": "\t\tself._validate()", 
+    "223": "\t\tself.set_docstatus()"
+   }, 
+   "lnum": 221
+  }, 
+  {
+   "call": "(self=<erpnext.accounts.doctype.journal_entry.journal_entry.JournalEntry object>)", 
+   "dump": {
+    "self": "<erpnext.accounts.doctype.journal_entry.journal_entry.JournalEntry object>", 
+    "self. run_method": "<bound method JournalEntry.run_method of <erpnex...journal_entry.journal_entry.JournalEntry object>>"
+   }, 
+   "file": "/home/vini/frappe-bench/apps/frappe/frappe/model/document.py", 
+   "func": "run_before_save_methods", 
+   "lines": {
+    "860": "", 
+    "861": "\t\tif self._action==\"save\":", 
+    "862": "\t\t\tself.run_method(\"validate\")", 
+    "863": "\t\t\tself.run_method(\"before_save\")", 
+    "864": "\t\telif self._action==\"submit\":"
+   }, 
+   "lnum": 862
+  }, 
+  {
+   "call": "(self=<erpnext.accounts.doctype.journal_entry.journal_entry.JournalEntry object>, method=u'validate', *args=(), **kwargs={})", 
+   "dump": {
+    "Document. hook": "<function hook>", 
+    "args": "()", 
+    "fn": "<function validate>", 
+    "global Document": "<class 'frappe.model.document.Document'>", 
+    "kwargs": "{}", 
+    "out": "undefined", 
+    "self": "<erpnext.accounts.doctype.journal_entry.journal_entry.JournalEntry object>"
+   }, 
+   "file": "/home/vini/frappe-bench/apps/frappe/frappe/model/document.py", 
+   "func": "run_method", 
+   "lines": {
+    "756": "", 
+    "757": "\t\tfn.__name__ = str(method)", 
+    "758": "\t\tout = Document.hook(fn)(self, *args, **kwargs)", 
+    "759": "", 
+    "760": "\t\tself.run_email_alerts(method)"
+   }, 
+   "lnum": 758
+  }, 
+  {
+   "call": "(self=<erpnext.accounts.doctype.journal_entry.journal_entry.JournalEntry object>, *args=(), **kwargs={})", 
+   "dump": {
+    "args": "()", 
+    "composed": "<function runner>", 
+    "kwargs": "{}", 
+    "method": "'validate'", 
+    "self": "<erpnext.accounts.doctype.journal_entry.journal_entry.JournalEntry object>"
+   }, 
+   "file": "/home/vini/frappe-bench/apps/frappe/frappe/model/document.py", 
+   "func": "composer", 
+   "lines": {
+    "1025": "", 
+    "1026": "\t\t\tcomposed = compose(f, *hooks)", 
+    "1027": "\t\t\treturn composed(self, method, *args, **kwargs)", 
+    "1028": "", 
+    "1029": "\t\treturn composer"
+   }, 
+   "lnum": 1027
+  }, 
+  {
+   "call": "(self=<erpnext.accounts.doctype.journal_entry.journal_entry.JournalEntry object>, method='validate', *args=(), **kwargs={})", 
+   "dump": {
+    "add_to_return_value": "<function add_to_return_value>", 
+    "args": "()", 
+    "fn": "<function validate>", 
+    "kwargs": "{}", 
+    "self": "<erpnext.accounts.doctype.journal_entry.journal_entry.JournalEntry object>"
+   }, 
+   "file": "/home/vini/frappe-bench/apps/frappe/frappe/model/document.py", 
+   "func": "runner", 
+   "lines": {
+    "1008": "\t\tdef compose(fn, *hooks):", 
+    "1009": "\t\t\tdef runner(self, method, *args, **kwargs):", 
+    "1010": "\t\t\t\tadd_to_return_value(self, fn(self, *args, **kwargs))", 
+    "1011": "\t\t\t\tfor f in hooks:", 
+    "1012": "\t\t\t\t\tadd_to_return_value(self, f(self, method, *args, **kwargs))"
+   }, 
+   "lnum": 1010
+  }, 
+  {
+   "call": "(self=<erpnext.accounts.doctype.journal_entry.journal_entry.JournalEntry object>, *args=(), **kwargs={})", 
+   "dump": {
+    "args": "()", 
+    "builtin getattr": "<built-in function getattr>", 
+    "fn": "undefined", 
+    "kwargs": "{}", 
+    "method": "u'validate'", 
+    "self": "<erpnext.accounts.doctype.journal_entry.journal_entry.JournalEntry object>"
+   }, 
+   "file": "/home/vini/frappe-bench/apps/frappe/frappe/model/document.py", 
+   "func": "<lambda>", 
+   "lines": {
+    "750": "", 
+    "751": "\t\tif hasattr(self, method) and hasattr(getattr(self, method), \"__call__\"):", 
+    "752": "\t\t\tfn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)", 
+    "753": "\t\telse:", 
+    "754": "\t\t\t# hack! to run hooks even if method does not exist"
+   }, 
+   "lnum": 752
+  }, 
+  {
+   "call": "(self=<erpnext.accounts.doctype.journal_entry.journal_entry.JournalEntry object>)", 
+   "dump": {
+    "self": "<erpnext.accounts.doctype.journal_entry.journal_entry.JournalEntry object>", 
+    "self. validate_party": "<bound method JournalEntry.validate_party of <er...journal_entry.journal_entry.JournalEntry object>>"
+   }, 
+   "file": "/home/vini/frappe-bench/apps/erpnext/erpnext/accounts/doctype/journal_entry/journal_entry.py", 
+   "func": "validate", 
+   "lines": {
+    "24": "\t\tself.clearance_date = None", 
+    "25": "", 
+    "26": "\t\tself.validate_party()", 
+    "27": "\t\tself.validate_cheque_info()", 
+    "28": "\t\tself.validate_entries_for_advance()"
+   }, 
+   "lnum": 26
+  }, 
+  {
+   "call": "(self=<erpnext.accounts.doctype.journal_entry.journal_entry.JournalEntry object>)", 
+   "dump": {
+    "account_type": "u'Payable'", 
+    "d": "<erpnext.accounts.doctype.journal_entry_account.journal_entry_account.JournalEntryAccount object>", 
+    "d.account": "undefined", 
+    "frappe. db": "<frappe.database.Database instance>", 
+    "frappe.db. get_value": "<bound method Database.get_value of <frappe.database.Database instance>>", 
+    "global frappe": "<module 'frappe' from '/home/vini/frappe-bench/apps/frappe/frappe/__init__.pyc'>"
+   }, 
+   "file": "/home/vini/frappe-bench/apps/erpnext/erpnext/accounts/doctype/journal_entry/journal_entry.py", 
+   "func": "validate_party", 
+   "lines": {
+    "98": "\tdef validate_party(self):", 
+    "99": "\t\tfor d in self.get(\"accounts\"):", 
+    "100": "\t\t\taccount_type = frappe.db.get_value(\"Account\", d.account, \"account_type\")", 
+    "101": "\t\t\tif account_type in [\"Receivable\", \"Payable\"]:", 
+    "102": "\t\t\t\tif not (d.party_type and d.party):"
+   }, 
+   "lnum": 100
+  }
+ ], 
+ "locals": {
+  "account_type": "u'Payable'", 
+  "d": "<erpnext.accounts.doctype.journal_entry_account.journal_entry_account.JournalEntryAccount object>", 
+  "self": "<erpnext.accounts.doctype.journal_entry.journal_entry.JournalEntry object>"
+ }, 
+ "pyver": "Python 2.7.5: /home/vini/frappe-bench/env/bin/python (prefix: /home/vini/frappe-bench/env)", 
+ "timestamp": "2018-09-26 14:34:42.267446", 
+ "traceback": "Traceback (most recent call last):\n  File \"/home/vini/frappe-bench/apps/frappe/frappe/app.py\", line 62, in application\n    response = frappe.handler.handle()\n  File \"/home/vini/frappe-bench/apps/frappe/frappe/handler.py\", line 22, in handle\n    data = execute_cmd(cmd)\n  File \"/home/vini/frappe-bench/apps/frappe/frappe/handler.py\", line 53, in execute_cmd\n    return frappe.call(method, **frappe.form_dict)\n  File \"/home/vini/frappe-bench/apps/frappe/frappe/__init__.py\", line 939, in call\n    return fn(*args, **newargs)\n  File \"/home/vini/frappe-bench/apps/frappe/frappe/desk/form/save.py\", line 22, in savedocs\n    doc.save()\n  File \"/home/vini/frappe-bench/apps/frappe/frappe/model/document.py\", line 259, in save\n    return self._save(*args, **kwargs)\n  File \"/home/vini/frappe-bench/apps/frappe/frappe/model/document.py\", line 282, in _save\n    self.insert()\n  File \"/home/vini/frappe-bench/apps/frappe/frappe/model/document.py\", line 221, in insert\n    self.run_before_save_methods()\n  File \"/home/vini/frappe-bench/apps/frappe/frappe/model/document.py\", line 862, in run_before_save_methods\n    self.run_method(\"validate\")\n  File \"/home/vini/frappe-bench/apps/frappe/frappe/model/document.py\", line 758, in run_method\n    out = Document.hook(fn)(self, *args, **kwargs)\n  File \"/home/vini/frappe-bench/apps/frappe/frappe/model/document.py\", line 1027, in composer\n    return composed(self, method, *args, **kwargs)\n  File \"/home/vini/frappe-bench/apps/frappe/frappe/model/document.py\", line 1010, in runner\n    add_to_return_value(self, fn(self, *args, **kwargs))\n  File \"/home/vini/frappe-bench/apps/frappe/frappe/model/document.py\", line 752, in <lambda>\n    fn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)\n  File \"/home/vini/frappe-bench/apps/erpnext/erpnext/accounts/doctype/journal_entry/journal_entry.py\", line 26, in validate\n    self.validate_party()\n  File \"/home/vini/frappe-bench/apps/erpnext/erpnext/accounts/doctype/journal_entry/journal_entry.py\", line 100, in validate_party\n    account_type = frappe.db.get_value(\"Account\", d.account, \"account_type\")\nAttributeError: 'JournalEntryAccount' object has no attribute 'account'\n"
+}

@@ -1,0 +1,31 @@
+[ERROR] 2018-09-23 14:37:12,387 | /home/vini/frappe-bench/apps/frappe/frappe/app.py:
+Site: site1.local
+Form Dict: {
+ "cmd": "frappe.model.mapper.make_mapped_doc", 
+ "method": "erpnext.buying.doctype.purchase_order.purchase_order.make_purchase_invoice", 
+ "selected_children": "{}", 
+ "source_name": "PO-00017-1"
+}
+Request Error
+Traceback (most recent call last):
+  File "/home/vini/frappe-bench/apps/frappe/frappe/app.py", line 62, in application
+    response = frappe.handler.handle()
+  File "/home/vini/frappe-bench/apps/frappe/frappe/handler.py", line 22, in handle
+    data = execute_cmd(cmd)
+  File "/home/vini/frappe-bench/apps/frappe/frappe/handler.py", line 53, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/vini/frappe-bench/apps/frappe/frappe/__init__.py", line 939, in call
+    return fn(*args, **newargs)
+  File "/home/vini/frappe-bench/apps/frappe/frappe/model/mapper.py", line 27, in make_mapped_doc
+    return method(source_name)
+  File "/home/vini/frappe-bench/apps/erpnext/erpnext/buying/doctype/purchase_order/purchase_order.py", line 430, in make_purchase_invoice
+    }, target_doc, postprocess)
+  File "/home/vini/frappe-bench/apps/frappe/frappe/model/mapper.py", line 107, in get_mapped_doc
+    map_child_doc(source_d, target_doc, table_map, source_doc)
+  File "/home/vini/frappe-bench/apps/frappe/frappe/model/mapper.py", line 202, in map_child_doc
+    map_doc(source_d, target_d, table_map, source_parent)
+  File "/home/vini/frappe-bench/apps/frappe/frappe/model/mapper.py", line 126, in map_doc
+    table_map["postprocess"](source_doc, target_doc, source_parent)
+  File "/home/vini/frappe-bench/apps/erpnext/erpnext/buying/doctype/purchase_order/purchase_order.py", line 389, in update_item
+    target.pallets_ordered = flt(obj.box)/flt(obj.boxes_pallet_for_purchase)
+ZeroDivisionError: float division by zero

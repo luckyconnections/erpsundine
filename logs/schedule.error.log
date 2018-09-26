@@ -1,0 +1,108 @@
+Traceback (most recent call last):
+  File "/usr/lib64/python2.7/runpy.py", line 162, in _run_module_as_main
+    "__main__", fname, loader, pkg_name)
+  File "/usr/lib64/python2.7/runpy.py", line 72, in _run_code
+    exec code in run_globals
+  File "/home/vini/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 94, in <module>
+    main()
+  File "/home/vini/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 18, in main
+    click.Group(commands=commands)(prog_name='bench')
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/click/core.py", line 722, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/click/core.py", line 697, in main
+    rv = self.invoke(ctx)
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/click/core.py", line 1066, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/click/core.py", line 1066, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/click/core.py", line 895, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/click/core.py", line 535, in invoke
+    return callback(*args, **kwargs)
+  File "/home/vini/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 151, in start_scheduler
+    start_scheduler()
+  File "/home/vini/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 57, in start_scheduler
+    schedule.run_pending()
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/schedule/__init__.py", line 493, in run_pending
+    default_scheduler.run_pending()
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/schedule/__init__.py", line 78, in run_pending
+    self._run_job(job)
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/schedule/__init__.py", line 131, in _run_job
+    ret = job.run()
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/schedule/__init__.py", line 411, in run
+    ret = self.job_func()
+  File "/home/vini/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 68, in enqueue_events_for_all_sites
+    jobs_per_site = get_jobs()
+  File "/home/vini/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 165, in get_jobs
+    for job in q.jobs:
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/rq/queue.py", line 166, in jobs
+    return self.get_jobs()
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/rq/queue.py", line 155, in get_jobs
+    job_ids = self.get_job_ids(offset, length)
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/rq/queue.py", line 151, in get_job_ids
+    self.connection.lrange(self.key, start, end)]
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/redis/client.py", line 1347, in lrange
+    return self.execute_command('LRANGE', name, start, end)
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/redis/client.py", line 673, in execute_command
+    connection.send_command(*args)
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/redis/connection.py", line 610, in send_command
+    self.send_packed_command(self.pack_command(*args))
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/redis/connection.py", line 585, in send_packed_command
+    self.connect()
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/redis/connection.py", line 489, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to localhost:11001. Connection refused.
+Traceback (most recent call last):
+  File "/usr/lib64/python2.7/runpy.py", line 162, in _run_module_as_main
+    "__main__", fname, loader, pkg_name)
+  File "/usr/lib64/python2.7/runpy.py", line 72, in _run_code
+    exec code in run_globals
+  File "/home/vini/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 94, in <module>
+    main()
+  File "/home/vini/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 18, in main
+    click.Group(commands=commands)(prog_name='bench')
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/click/core.py", line 722, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/click/core.py", line 697, in main
+    rv = self.invoke(ctx)
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/click/core.py", line 1066, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/click/core.py", line 1066, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/click/core.py", line 895, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/click/core.py", line 535, in invoke
+    return callback(*args, **kwargs)
+  File "/home/vini/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 151, in start_scheduler
+    start_scheduler()
+  File "/home/vini/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 57, in start_scheduler
+    schedule.run_pending()
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/schedule/__init__.py", line 493, in run_pending
+    default_scheduler.run_pending()
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/schedule/__init__.py", line 78, in run_pending
+    self._run_job(job)
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/schedule/__init__.py", line 131, in _run_job
+    ret = job.run()
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/schedule/__init__.py", line 411, in run
+    ret = self.job_func()
+  File "/home/vini/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 68, in enqueue_events_for_all_sites
+    jobs_per_site = get_jobs()
+  File "/home/vini/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 165, in get_jobs
+    for job in q.jobs:
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/rq/queue.py", line 166, in jobs
+    return self.get_jobs()
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/rq/queue.py", line 155, in get_jobs
+    job_ids = self.get_job_ids(offset, length)
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/rq/queue.py", line 151, in get_job_ids
+    self.connection.lrange(self.key, start, end)]
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/redis/client.py", line 1347, in lrange
+    return self.execute_command('LRANGE', name, start, end)
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/redis/client.py", line 673, in execute_command
+    connection.send_command(*args)
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/redis/connection.py", line 610, in send_command
+    self.send_packed_command(self.pack_command(*args))
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/redis/connection.py", line 585, in send_packed_command
+    self.connect()
+  File "/home/vini/frappe-bench/env/lib/python2.7/site-packages/redis/connection.py", line 489, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to localhost:11001. Connection refused.

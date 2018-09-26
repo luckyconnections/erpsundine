@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include luckyconnection *.css
+recursive-include luckyconnection *.csv
+recursive-include luckyconnection *.html
+recursive-include luckyconnection *.ico
+recursive-include luckyconnection *.js
+recursive-include luckyconnection *.json
+recursive-include luckyconnection *.md
+recursive-include luckyconnection *.png
+recursive-include luckyconnection *.py
+recursive-include luckyconnection *.svg
+recursive-include luckyconnection *.txt
+recursive-exclude luckyconnection *.pyc

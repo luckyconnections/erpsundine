@@ -1,0 +1,16 @@
+{
+ "db_name": "1bd3e0294da19198", 
+ "db_password": "OKIed0kR7aDDiW4U", 
+ "developer_mode": 1, 
+ "encryption_key": "ClDRI3ueWnc-dkRkROMN6fVLXTFgER-i_Bvjukz1IAY=", 
+ "host_name": "erp.sundinepro.com", 
+ "limits": {
+  "space_usage": {
+   "backup_size": 63.0, 
+   "database_size": 115.65, 
+   "files_size": 24.0, 
+   "total": 202.65
+  }
+ }, 
+ "nginx_port": 3500
+}
