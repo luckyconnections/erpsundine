@@ -1,7 +1,7 @@
 redis_cache: redis-server config/redis_cache.conf
 redis_socketio: redis-server config/redis_socketio.conf
 redis_queue: redis-server config/redis_queue.conf
-web: bench serve --port 3501
+web: bench serve --port 3500
 
 socketio: /usr/bin/node apps/frappe/socketio.js
 

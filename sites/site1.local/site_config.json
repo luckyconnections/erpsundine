@@ -6,10 +6,10 @@
  "host_name": "erp.sundinepro.com", 
  "limits": {
   "space_usage": {
-   "backup_size": 63.0, 
-   "database_size": 115.65, 
-   "files_size": 24.0, 
-   "total": 202.65
+   "backup_size": 65.0, 
+   "database_size": 121.23, 
+   "files_size": 40.0, 
+   "total": 226.23
   }
  }, 
  "nginx_port": 3500
